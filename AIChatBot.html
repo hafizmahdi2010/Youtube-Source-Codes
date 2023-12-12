@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Chatbot</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+        }
+
+        .chat-container {
+          min-width: 400px;
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            justify-content: center;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .chat-header {
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        .chat-box {
+            height: 300px;
+            overflow-y: scroll;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .message {
+            margin: 10px;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        .message.bot {
+            background-color: #f1f1f1;
+            text-align: left;
+        }
+
+        #user-input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+  <div class="chat-container">
+    <div class="chat-header">
+        <h1>AI Chatbot</h1>
+    </div>
+    <div class="chat-box" id="chat-box">
+        <div class="message bot">Hello! How can I assist you?</div>
+    </div>
+    <input type="text" id="user-input" placeholder="Type your message...">
+</div>
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+      const chatBox = document.getElementById('chat-box');
+      const userInput = document.getElementById('user-input');
+
+      userInput.addEventListener('keydown', function (e) {
+          if (e.key === 'Enter') {
+              e.preventDefault();
+
+              const userMessage = userInput.value;
+              userInput.value = '';
+
+              // Display user's message
+              displayMessage(userMessage, 'user');
+
+              // Send user's message to AI
+              sendToDialogflow(userMessage);
+          }
+      });
+
+      function displayMessage(message, sender) {
+          const messageDiv = document.createElement('div');
+          messageDiv.classList.add('message', sender);
+
+          if (sender === 'bot') {
+              // Create a typing animation for the AI response
+              messageDiv.innerHTML = '<div class="typing-animation"></div>';
+              chatBox.appendChild(messageDiv);
+              simulateTypingAnimation(messageDiv.querySelector('.typing-animation'), message);
+          } 
+          
+          else {
+              messageDiv.textContent = message;
+              chatBox.appendChild(messageDiv);
+          }
+
+          // Scroll to the bottom of the chat box
+          chatBox.scrollTop = chatBox.scrollHeight;
+      }
+
+      function simulateTypingAnimation(targetElement, text) {
+          const typingSpeed = 15; // Speed in milliseconds per character
+          let charIndex = 0;
+
+          const typingInterval = setInterval(function () {
+              if (charIndex < text.length) {
+                  targetElement.textContent += text.charAt(charIndex);
+                  charIndex++;
+              } else {
+                  clearInterval(typingInterval); // Stop the typing animation when done
+              }
+          }, typingSpeed);
+      }
+
+      function sendToDialogflow(userMessage) {
+          // Simulate a response with choices based on user's message
+          let aiResponse = '';
+
+          if (userMessage.toLowerCase().includes('hello')) {
+              aiResponse = 'Welcome to Mahdi Chatbot. How can I assist you?';
+          }
+          if (userMessage.toLowerCase().includes('how are you')) {
+              aiResponse = 'im ai chatbot like chatGPT ? im not feel any feeling';
+          } 
+
+          if (userMessage.toLowerCase().includes('who is mahdi')) {
+              aiResponse = 'mahdi is the great programer and devloper !';
+          } 
+          else {
+              aiResponse = 'I\'m sorry, I didn\'t understand your question. Please choose from the following options:';
+          }
+
+          // Display AI's response with typing animation
+          displayMessage(aiResponse, 'bot');
+
+          // If it's a generic response with choices, you can provide options
+          if (aiResponse.includes('options:')) {
+              displayMessage('1. Option 1', 'bot');
+              displayMessage('2. Option 2', 'bot');
+              displayMessage('3. Option 3', 'bot');
+          }
+      }
+  });
+</script>
+</body>
+</html>
