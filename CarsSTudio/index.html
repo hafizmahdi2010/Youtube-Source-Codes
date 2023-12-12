@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MahdiCars - Studio</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <header>
+        <div class="logo">
+            <i class='bx bx-menu' onclick="show_menu()"></i>
+            <img src="/logo.png" alt="" width="140px">
+        </div>
+       <div class="links">
+        <i class='bx bx-window-close' onclick="hide_menu()"></i>
+        <a href="/index.html">home</a>
+        <a href="#">About</a>
+        <a href="#">sells</a>
+        <a href="#">contact</a>
+       </div>
+
+
+
+      <div class="right head">
+        <i class='bx bx-search' onclick="open_search()"></i>
+
+        <div id="search_bar">
+            <i class='bx bx-search'></i>
+            <input type="text" placeholder="Search Here...">
+        </div>
+
+        <i class='bx bx-car' ></i>
+        <button class="btn" style="margin-left: 30px;">Login</button>
+      </div>
+    </header>
+
+    <section class="hero flex al-center">
+        <div class="left collumn">
+            <p>Welcome To</p>
+            <h1>MahdiCars - Studio</h1>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sapiente sed maxime impedit magni distinctio eligendi quas, culpa reiciendis expedita, esse tenetur, perspiciatis aliquam vel minima beatae temporibus placeat architecto. Deserunt, ratione est?</p>
+            <button class="btn" style="margin-top: 20px;">Get Started</button>
+        </div>
+        <div class="right collumn">
+            <img src="/herocar.gif" alt="">
+        </div>
+    </section>
+
+    <h2 class="common">Servises</h2>
+    <section class="servises">
+        <div class="servise">
+            <img src="https://img.freepik.com/free-vector/gradient-ui-ux-background_23-2149052117.jpg?size=626&ext=jpg&ga=GA1.1.1880011253.1700092800&semt=ais" alt="">
+            <div class="servise_deatils">
+                <h2>UI/UX Development</h2>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eaque, velit magni inventore blanditiis eius repellat cupiditate nam ipsum officiis, consequuntur sequi earum laborum!</p>
+            </div>
+        </div>
+
+        <div class="servise">
+            <img src="https://img.freepik.com/free-vector/gradient-ui-ux-background_23-2149052117.jpg?size=626&ext=jpg&ga=GA1.1.1880011253.1700092800&semt=ais" alt="">
+            <div class="servise_deatils">
+                <h2>UI/UX Development</h2>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eaque, velit magni inventore blanditiis eius repellat cupiditate nam ipsum officiis, consequuntur sequi earum laborum!</p>
+            </div>
+        </div>
+
+        <div class="servise">
+            <img src="https://img.freepik.com/free-vector/gradient-ui-ux-background_23-2149052117.jpg?size=626&ext=jpg&ga=GA1.1.1880011253.1700092800&semt=ais" alt="">
+            <div class="servise_deatils">
+                <h2>UI/UX Development</h2>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eaque, velit magni inventore blanditiis eius repellat cupiditate nam ipsum officiis, consequuntur sequi earum laborum!</p>
+            </div>
+        </div>
+    </section>
+
+
+
+    <script>
+        const links_menu = document.querySelector('.links');
+        
+
+        function show_menu(){
+          const links_menu = document.querySelector('.links').classList.add("opened_menu")
+        }
+
+        function hide_menu(){
+            const links_menu = document.querySelector('.links').classList.remove("opened_menu")
+        }
+
+
+        function open_search(){
+            const search_bar = document.querySelector('#search_bar').classList.toggle("open_search");
+        }
+    </script>
+
+
+</body>
+</html>

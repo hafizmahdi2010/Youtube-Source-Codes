@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Code With Mahdi</title>
+  <link rel="icon" href="https://yt3.googleusercontent.com/Ub8wDdhEHV3bjCLNG8zosz2EXk5Fatw-n5D8wjcn0hKV8s6_OcyjozpxyrseQouEFClafMjQ7g=s176-c-k-c0x00ffffff-no-rj">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,200;0,300;1,100;1,200&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;1,100;1,200;1,300&family=Roboto:ital,wght@0,300;0,400;1,100;1,400&display=swap');
+    *{
+      margin: 0;
+      padding: 0;
+    }
+    body{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Roboto', sans-serif;
+    }
+    
+    header{
+      width: 99.90%;
+      height: 80px;
+      display: flex;
+      align-items: center;
+      /* border: 2px solid red; */
+      background-color: #16a5e8;
+      margin: auto;
+      /* justify-content: space-between; */
+    }
+    .logo{
+      margin-left: 100px;
+    }
+    .logo img{
+      width: 40%;
+      border-radius: 50%;
+    }
+
+    .links{
+      margin: auto;
+      width: 40%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      /* border: 2px solid red; */
+    }
+    .links a{
+      font-size: 20px;
+      color: #fff;
+      margin-left: 15px;
+      text-decoration: double;
+      text-transform: uppercase;
+      font-weight: 400;
+      transition: 0.3s;
+      padding: 5px;
+      /* background-color: red; */
+      border-radius: 5px;
+      outline: 1px solid aqua;
+    }
+    .links a:hover{
+      color: aqua;
+    }
+    .bx{
+      font-size: 30px;
+      color: #fff;
+      cursor: pointer;
+      margin-right: 20px;
+      transition: 0.3s;
+    }
+    .bx:hover{
+      color: aqua;
+    }
+
+    /* hero styles */
+    .hero{
+      width: 100%;
+      height: auto;
+      display: flex;
+      align-items: center;
+      margin: auto;
+      /* border: 2px solid red; */
+      justify-content: space-between;
+    }
+    .left{
+      width: 40%;
+      margin-left: 100px;
+    }
+    .btn{
+      padding: 10px;
+      min-width: 150px;
+      border: 0;
+      outline: 0;
+      text-align: center;
+      text-transform: uppercase;
+      font-weight: 500;
+      cursor: pointer;
+      background-color: #16a5e8;
+      border-radius: 5px;
+      color: #f3f3f3;
+      transition: 0.3s;
+    }
+    .btn:hover{
+      transform: scale(105%);
+    }
+    #element{
+      color: #000;
+    }
+</style>
+</head>
+<body>
+  <header>
+     <div class="logo">
+      <img src="https://yt3.googleusercontent.com/Ub8wDdhEHV3bjCLNG8zosz2EXk5Fatw-n5D8wjcn0hKV8s6_OcyjozpxyrseQouEFClafMjQ7g=s176-c-k-c0x00ffffff-no-rj" alt="">
+     </div>
+     <div class="links">
+      <a href="">home</a>
+      <a href="">about</a>
+      <a href="">services</a>
+      <a href="">videos</a>
+      <a href="">contact</a>
+     </div>
+     <div class="icons">
+      <i class='bx bx-search'></i>
+      <i class='bx bx-cart-alt' ></i>
+      <i class='bx bx-user' ></i>
+      <!-- <svg xmlns="http://www.w3.org/2000/svg" class="bx" height="1em" viewBox="0 0 448 512">! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc.<path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg>     </div> -->
+  </header>
+
+   <section class="hero">
+    <div class="left">
+      <p>Welcome To</p>
+      <h1><span id="element"></span></h1>
+      <h1><span id="element"></span></h1>
+      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ratione labore et corporis ad soluta neque delectus enim aliquam odit, eaque voluptas. Neque, nesciunt dolore? Sint vitae fuga error tenetur illo necessitatibus maxime!</p>
+      <button class="btn" style="margin-top: 20px;">join now</button>
+    </div>
+    <div class="right">
+      <img src="/herogif.gif" alt="">
+    </div>
+   </section>
+
+
+
+  <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+  <script>
+    var typed = new Typed('#element', {
+      strings: ['Code With Mahdi'],
+      typeSpeed: 50,
+    });
+  </script>
+   <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+</body>
+</html>
