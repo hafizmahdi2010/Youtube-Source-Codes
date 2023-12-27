@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PortFolio Website - Code With Mahdi</title>
+  <link rel="stylesheet" href="/style.css">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <link rel="stylesheet" href="/teblet.css">
+  <link rel="stylesheet" href="/mobile.css">
+  <link rel="stylesheet" href="/DarkMode.css">
+</head>
+<body>
+  <header>
+    <h3 class="logo">PortFolio</h3>
+
+    <nav>
+      <ul class="nav-list">
+        <li><a href="">home</a></li>
+        <li><a href="">about</a></li>
+        <li><a href="">servises</a></li>
+        <li><a href="">works</a></li>
+        <li><a href="">contact</a></li>
+      </ul>
+      <i class='bx bx-menu'></i>
+    </nav>
+  </header>
+
+  <div class="hero-section">
+    <div class="left">
+      <h1>Hello Im <span style="color: royalblue;">Mahdi</span> And Im A <br> <span style="color: royalblue;">Web Developer</span></h1>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia deleniti expedita odit veniam voluptates delectus voluptate consequatur officiis commodi? Ea fuga inventore esse odit nulla?</p>
+    </div>
+    <div class="right">
+      <img src="/hero.png" alt="">
+    </div>
+  </div>
+
+  <div class="test"></div>
+
+  <script>
+    document.querySelector('.bx-menu').addEventListener('click', () => {
+      var navList = document.querySelector('.nav-list');
+      navList.classList.toggle("active")
+    })
+  </script>
+</body>
+</html>

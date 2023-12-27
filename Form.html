@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;1,100&display=swap');
+  </style>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Roboto', sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      background-color: rgb(162, 80, 239);
+    }
+
+    .form {
+      width: 40%;
+      height: 50%;
+      background-color: #fff;
+      border-radius: 10px;
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+
+    .form h2 {
+      text-align: center;
+      font-size: 34px;
+      font-weight: 400;
+      margin-top: 20px;
+    }
+
+    .inputs {
+      width: 100%;
+    }
+
+    .inputs input {
+      width: 95%;
+      padding: 10px;
+      margin-top: 7px;
+      margin-bottom: 7px;
+      background-color: #fef6f6;
+      border: 1px solid #ccc;
+      outline: 0;
+      border-radius: 5px;
+    }
+
+    .inputs input:hover {
+      border: 2px solid green;
+    }
+
+    .inputs input:focus {
+      border: 2px solid green;
+    }
+
+    .sign-in {
+      width: 100%;
+      background-color: green;
+      color: #fff;
+      text-transform: capitalize;
+      text-align: center;
+      padding: 15px;
+      border: 0;
+      outline: 0;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-bottom: 30px;
+      margin-top: 20px;
+      font-size: 20px;
+    }
+
+    .sign-in:hover {
+      background-color: rgb(15, 97, 15);
+    }
+    
+    .sign_input.errFeild{
+      border: 2px solid red;
+    }
+
+  
+
+
+  </style>
+</head>
+
+<body>
+
+  <div class="form">
+    <h2>Sign In</h2>
+    <div class="inputs">
+      <h3>User Name</h3>
+      <input type="text" placeholder="User Name" class="sign_input" id="sign_input">
+
+      <h3>Email Id</h3>
+      <input type="email" placeholder="Email Id" class="sign_input" id="sign_input">
+
+      <h3>Phone Number</h3>
+      <input type="number" placeholder="Phone Number" class="sign_input" id="sign_input">
+
+      <h3>Password</h3>
+      <input type="password" placeholder="Password" class="sign_input" id="sign_input">
+
+      <button class="sign-in">Sign In</button>
+    </div>
+  </div>
+
+
+  <script>
+    var inputs = document.querySelectorAll(".sign_input");
+    var inputsArr = Array.from(inputs);
+    var button = document.querySelector(".sign-in");
+
+  
+    
+
+
+    button.addEventListener('click', () => {
+      inputsArr.forEach((elem,index)=>{
+
+
+        if(elem.value === ""){
+          console.log('Condition Is True');
+          elem.classList.add("errFeild");
+        }
+        
+        else{
+          console.log('Condition Is False');
+          
+        }
+      })
+    })
+
+
+  
+
+
+
+  </script>
+</body>
+
+</html>

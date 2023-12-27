@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>mahdi</title>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+    }
+  </style>
+</head>
+<body>
+
+  
+  <h1>Developers : </h1>
+  <input type="text" class="ser">
+  <button class="btn">Search</button>
+  <div class="container"></div>
+
+
+  
+  <script>
+   let nom = [3,45,65,12,32,10,46,79,12,43,50];
+   const results = nom.filter(filterMethod)
+
+  let dic = [
+    {
+      name:"mahdi",
+      age:13,
+      isDeveloper:true
+    },
+    {
+      name:"mirsab",
+      age:13,
+      isDeveloper:false
+    },
+    {
+      name:"aroosh",
+      age:13,
+      isDeveloper:false
+    },
+    {
+      name:"motashim",
+      age:13,
+      isDeveloper:true
+    },
+  ]
+
+  let usernames = [];
+ 
+  let newNames = [];
+  dic.forEach((e)=>{
+    console.log(e.name)
+    usernames += e.name + ',';
+    newNames = usernames.split(",")
+    console.log("Arr : ",newNames)
+  })
+
+  function filterMethod(i){
+    return i >= 18;
+  }
+
+  const dicRes = dic.filter(checkDeveloper);
+
+
+  function checkDeveloper(i){
+    return i.isDeveloper === true
+  }
+
+  let html = [];
+  dicRes.map((elem)=>{
+    html += `
+    <h3>${elem.name}</h3>
+    <p>Developer : ${elem.isDeveloper}</p>
+    `;
+    document.querySelector('.container').innerHTML = html;
+  })
+
+  console.log("Check Dic : ", dicRes)
+
+  console.log("Results : ",results)
+
+  const btn = document.querySelector(".btn");
+  let ser = document.querySelector('.ser');
+  btn.addEventListener('click',(e)=>{
+    console.log(newNames.includes(ser.value))
+    
+  })
+  </script>
+</body>
+</html>

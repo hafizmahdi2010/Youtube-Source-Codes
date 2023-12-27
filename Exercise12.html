@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Random Colors</title>
+  <style>
+    body{
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+     background-color: aquamarine;
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     min-height: 100vh;
+     justify-content: center;
+     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    .container{
+      width: 30vw;
+      display: grid;
+      grid-template-columns: auto auto auto auto;
+      background-color: #fff;
+      min-height: 30%;
+      border-radius: 10px;
+      gap: 20px;
+      padding: 20px;
+    }
+    .container .box{
+      width: 100%;
+      height: 50px;
+      border: 0;
+      outline: 1px solid #555;
+      cursor: pointer;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      border-radius: 5px;
+      /* color:aquamarine; */
+    }
+  </style>
+</head>
+<body>
+  <h1>This Ecercise Is Sloved By <a href="https://www.youtube.com/channel/UCY2ZhM00ed3bW-nTJcyMYBg" target="_blank">Code With Mahdi</a> YouTube Channel</h1>
+  <p>Refresh The Page You Can See New Random Colors in Boxes</p>
+  <div class="container">
+    <div class="box">box 1</div>
+    <div class="box">box 2</div>
+    <div class="box">box 3</div>
+    <div class="box">box 4</div>
+    <div class="box">box 5</div>
+    <div class="box">box 6</div>
+    <div class="box">box 7</div>
+    <div class="box">box 8</div>
+  </div>
+  <script>
+
+
+    let colors = ['red','blue','green','aqua','blueviolet','brown','yellow','pink','palevioletred','aquamarine','purple'];
+    var boxes = document.querySelectorAll('.box').forEach((e) => {
+        let randomColor = Math.floor(Math.random() * colors.length);
+        // Get the random string value from the array
+        const randomStringValue = colors[randomColor];
+        e.style.background = randomStringValue;
+    });
+
+    
+  </script>
+</body>
+</html>
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Random Color Boxes</title>
+  <style>
+    #container {
+      display: grid;
+      grid-template-columns: auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto ;
+    }
+
+    .box {
+      width: 50px;
+      height: 50px;
+      margin: 5px;
+      border: 1px solid #000;
+    }
+  </style>
+</head>
+<body>
+  <div id="container"></div>
+
+  <script>
+    function getRandomColor() {
+      const letters = '0123456789ABCDEF';
+      let color = '#';
+      for (let i = 0; i < 6; i++) {
+        color += letters[Math.floor(Math.random() * 16)];
+      }
+      return color;
+    }
+
+    function createRandomColorBoxes(numBoxes) {
+      const container = document.getElementById('container');
+
+      for (let i = 0; i < numBoxes; i++) {
+        const box = document.createElement('div');
+        box.className = 'box';
+        box.style.backgroundColor = getRandomColor();
+        container.appendChild(box);
+      }
+    }
+
+    // Generate 10 random color boxes
+    createRandomColorBoxes(10);
+  </script>
+</body>
+</html> -->

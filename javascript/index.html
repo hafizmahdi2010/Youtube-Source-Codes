@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>practice</title>
+  <style>
+    body {
+      margin: 10px;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: cursive;
+      color: green;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- <h1>Search</h1> -->
+
+  <script>
+    // concat is use to murge two arrys values in new arry
+
+    // Synatx : 
+    // const arry = ['mahdi', 'aroosh', 'mirsab', 'mustufa'];
+    // const arru2 = ['jhon', 'harry', 'qusim', 'ubdulla'];
+    // const newArry = arry.concat(arru2);
+    // console.log(newArry)
+
+    // // join is use to make tow values or 3,4,5,6 etc in one value;
+    // // Syntax : 
+
+    // const join = arry.join(arru2);
+    // console.log(join);
+
+
+    // // IMPORTANT : 
+
+    // var search = arry.indexOf('mustufa',0);
+    // console.log(search)
+
+    // // program to send message to user
+    // function message(){
+    //   if(search < 0){
+    //     document.write("No Search Result Find ! <br>");
+    //   }
+    //   else{
+    //     document.write(`Search Result Find In ${search} Of Index <br>`);
+    //   }
+    // }
+
+    // message()
+
+    // // Includes is use to search any value without given index
+
+    // var Includes = arry.includes("mahdi");
+    // console.log(Includes);
+
+    // // program to send message to user
+    // function includes(){
+    //   if(Includes === true){
+    //     document.write(`Search Result Is Finded. <br>`);
+    //   }
+    //   else{
+    //     document.write(`Search Result Is Not Finded ! <br>`);
+    //   }
+    // }
+
+    // includes()
+
+    // // Some is use to check the arry value , 1 value is pass the condition some is return "true";
+
+    // var ages = [12,43,2,8,18,43,6];
+    // var adult = ages.some((age)=>{
+    //   return age >= 18;
+    // })
+    // console.log("Adult :",adult)
+
+    // // "ever" is almost same to "some" but every check all values in arry , and 1 value is not pass the condation 'every is return false'
+
+    // var Everyadult = ages.every((age)=>{
+    //   return age >= 18;
+    // })
+    // console.log("All Adults :",Everyadult)
+
+    // // 'find()' method returns The vlaue of the 'first element in an arry' that pass a condition
+
+    // var find = ages.find((findage)=>{
+    //   return findage >= 18;
+    // })
+    // console.log("Find :",find);
+
+    // // 'findIndex()' method returns 'the index of the first value in an arry' that pass condition
+
+    // var findindex = ages.findIndex((findIndexage)=>{
+    //   return findIndexage >= 18;
+    // })
+    // console.log("FindIndex :",findindex);
+
+    // // filter
+
+    // var filter = ages.filter((filter)=>{
+    //   return filter >= 18;
+    // })
+    // console.log(filter)
+
+    // // 'toString() method is use to converte the arry vlaues to one string value';
+
+    // var onestring = arry.toString();
+    // console.log("One String :",onestring)
+    // console.log("Arry : ",arry)
+
+    // // forEach
+
+    // arry.forEach((e,i)=>{
+    //    console.log(i +" :","ForEach :",e);
+    // })
+
+    // // objects
+
+    // var info = {
+    //   firstname:"mahdi",
+    //   age:13,
+    //   class:8,
+    //   rollNo:857,
+    //   school:'Qulam Public',
+    //   id:657,
+    //   friends:['hamza','qasim','adnan','talib'],
+    //   salary : function(e){
+    //       return (
+    //         `<h1>Hello</h1>`
+    //       );
+    //   }
+    // };
+
+    // document.write("Friends : ",info.friends + "<br>")
+    // document.write("Salary : ",info.salary())
+    // console.log(info)
+
+    // Strings Methods
+
+    // var str = 'mahdi mirsab aroosh mustufa';
+    // var searchresult = str.match("aroosh", "");
+    // document.write(searchresult)
+
+    // search functions is use to search is :
+    // 1. search()
+    // 2. match()
+    // 3. includes()
+    // "match(/oosh/g)"; this is use to make arry on search result values and 'g' means globaly 
+
+    // trim is use to remove extra spaces
+
+    // var trim = str.trim();
+    // document.write(trim)
+
+    // chatAT is use to give the index of the value
+    // var words = str.split(' ');
+    // document.write("Words : " + words.length)
+
+
+    // maths 
+    //  "parseInt()" is use to converte decimale value ti integer value 
+
+    // var no = 9.88;
+    // var int = no.toFixed(7);
+    // document.write(int)
+
+    // isFinite is use to check the value is finite or Infinity
+
+    // Math Methods :
+
+    // var a = Math.floor(Math.random() * 10) + 1; // ceil is use to make upper value of the value
+    // document.write(a)
+
+    // sqrt , pow meane power of
+    // random
+
+
+
+    // date: 
+    // var clock = new Date();
+    // clock.setDate(200)
+    // document.write(clock)
+    // var date = clock.getDate()
+    // var hours = clock.getHours()
+    // document.write(date, "<br>", hours)
+    // set
+
+
+    // DOM
+
+    // element = document.title;
+    // console.log(element)
+
+
+    // advance
+
+
+    // map , filter
+
+    // var arry = [45,67,21,35,78,93];
+    // let newArry = arry.filter((value)=>{
+    //   return value > 50;
+    // })
+    // console.log(newArry)
+
+
+    // project test
+
+    let arr = [
+      { name: 'Product1', category: 'Electronics', price: 49.99, inStock: true },
+      { name: 'Product2', category: 'Clothing', price: 29.99, inStock: false },
+      { name: 'Product3', category: 'Books', price: 9.99, inStock: true },
+    ];
+    let inStockItems = arr.filter(item => item.inStock);
+    console.log(inStockItems);
+    var output;
+    inStockItems.map((d)=>{
+      output += `
+      <div>
+        <p>${d.name}</p>
+        <p>${d.category}</p>
+        <p>${d.price}</p>
+        <p>${d.inStock}</p>
+      </div>
+        `;
+        console.log(output)
+        // container.innerHTML = output;
+        document.getElementsByClassName('container').innerHTML = output;
+      })
+
+  </script>
+  <div class="container">
+  </div>
+</body>
+
+</html>

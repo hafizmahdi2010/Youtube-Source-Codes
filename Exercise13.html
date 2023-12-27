@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercise13</title>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,200;0,300;1,100;1,200&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;1,100;1,200;1,300&family=Roboto:ital,wght@0,300;0,400;1,100;1,400&display=swap');
+  </style>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Roboto', sans-serif;
+      overflow-x: hidden;
+    }
+
+    .container {
+      width: 90%;
+      margin: auto;
+      display: flex;
+      flex-direction: column;
+      margin-top: 50px;
+    }
+
+    .container .card {
+      width: 100%;
+      min-height: 100px;
+      display: flex;
+      cursor: pointer;
+      border-radius: 10px;
+      margin-bottom: 15px;
+      outline: 2px solid #ccc;
+    }
+
+    .container .card .imageArea {
+      width: 170px;
+      min-height: 100%;
+      /* background-color: red; */
+      border-radius: 10px;
+      position: relative;
+    }
+
+    .container .card .imageArea img {
+      width: 100%;
+      border-radius: 10px;
+      min-height: 100%;
+    }
+
+    .durition {
+      position: absolute;
+      bottom: 5%;
+      left: 70%;
+      color: #fff;
+      padding: 2px;
+      border-radius: 5px;
+      font-size: 13px;
+      padding-left: 4px;
+      padding-right: 4px;
+      background-color: #302D2E;
+    }
+
+    .deatils {
+      margin-top: 5px;
+      margin-left: 7px;
+    }
+
+    .deatils h3 {
+      font-size: 17px;
+    }
+
+    .flex {
+      display: flex;
+      align-items: center;
+      margin-top: 15px;
+    }
+
+    .flex p {
+      margin-left: 3px;
+      margin-right: 3px;
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <div class="container">
+
+    <!-- <div class="card">
+     <div class="imageArea">
+      <img src="https://i.ytimg.com/vi/tVzUXW6siu0/hqdefault.jpg?sqp=-oaymwEcCPYBEIoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLACwWOixJVrKLFindK92kYMgTcQbw" alt="">
+      <span class="durition">31:20</span> 
+    </div>
+
+    <div class="deatils">
+      <h3>Installing VS Code & How Websites Work | Sigma Web Development Course - Tutorial #1</h3>
+      <div class="flex">
+         <p>CodeWithHarry</p>&#x2022;<p>734K Views</p>&#x2022;<p>2 months ago</p>
+      </div>
+    </div>
+   </div> -->
+
+
+  </div>
+
+
+  <script>
+
+  const container = document.querySelector('.container');
+
+// Function to format views and months
+const formatNumber = (num) => {
+  if (num >= 1000) {
+    return (num / 1000).toFixed(1) + 'K';
+  } else {
+    return num.toString();
+  }
+};
+
+const generateCard = (title, chName, views, ago, durition, img) => {
+  // Format views and months
+  const formattedViews = formatNumber(views);
+  const formattedMonths = formatNumber(ago);
+
+  let html = `
+    <div class="card">
+      <div class="imageArea">
+        <img src="${img}" alt="">
+        <span class="durition">${durition}</span> 
+      </div>
+      <div class="deatils">
+        <h3>${title}</h3>
+        <div class="flex">
+          <p>${chName}</p>&#x2022;<p>${formattedViews} Views</p>&#x2022;<p>${formattedMonths} months ago</p>
+        </div>
+      </div>
+    </div>
+  `;
+
+  container.innerHTML += html; // Use += to append
+};
+
+generateCard(
+  "Installing VS Code & How Websites Work | Sigma Web Development Course - Tutorial #1",
+  "CodeWithHarry",
+  37500,
+  34344,
+  "19:34",
+  "https://i.ytimg.com/vi/nXba2-mgn1k/hqdefault.jpg?sqp=-oaymwEcCPYBEIoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDXT49aypaXDTfq5Y813UJXZZcVXA"
+);
+
+
+
+
+  </script>
+
+</body>
+
+</html>

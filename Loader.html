@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .outer {
+            width: 100%;
+            height: auto;
+        }
+
+
+
+        @keyframes example {
+            0% {
+                width: 0%;
+            }
+
+            10% {
+                width: 5%;
+            }
+
+            20% {
+                width: 20%;
+            }
+
+            40% {
+                width: 40%;
+            }
+
+            50% {
+                width: 50%;
+            }
+
+            60% {
+                width: 60%;
+            }
+
+            70% {
+                width: 70%;
+            }
+
+            80% {
+                width: 80%;
+            }
+
+            90% {
+                width: 90%;
+            }
+
+            100% {
+                width: 100%;
+            }
+
+        }
+
+        /* The element to apply the animation to */
+        .inner {
+            width: 0px;
+            height: 5px;
+            background-color: red;
+            animation-name: example;
+            animation-duration: 2s;
+            animation-direction: alternate;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="outer">
+        <div class="inner">
+
+        </div>
+        <div class="container"></div>
+    </div>
+
+    <script>
+        var fetchData = [];
+        const getData = () => {
+            
+            fetch('http://127.0.0.1:8000/readpostdata/', {
+                mode: 'cors',
+                method: 'GET',
+                headers: { 'Content-type': 'application/json; charset=UTF-8' },
+            })
+                .then((response) => response.json())
+                .then((data) => {
+                   fetchData = data;
+                   console.log(data)
+                })
+                .catch((error) => console.log('Error fetching data:', error));
+        };
+            getData();
+
+
+            let html; 
+            console.log(typeof fetchData)
+            fetchData.map((elem,index)=>{
+            html += `
+              <h3>${fetchData[1]}</h3>
+            `;
+            })
+            document.querySelector('.container').innerHTML = html;
+            
+    </script>
+</body>
+
+</html>

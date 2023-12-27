@@ -1,0 +1,133 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hacking Simulator</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Courier New', monospace;
+      background-color: #001f00; /* Dark green background */
+      color: #00ff00; /* Bright green text */
+      overflow: hidden;
+    }
+
+    #terminal {
+      white-space: pre-line;
+      padding: 20px;
+      animation: blink 1s infinite;
+    }
+
+    @keyframes blink {
+      50% {
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div id="terminal"></div>
+
+  <script>
+    const messages = [
+      "Initializing Hacking...",
+      "Reading Your Files...",
+      "Password Files Detected...",
+      "Sending All Passwords And Personal Files To Server...",
+      "Cleaning Up..."
+    ];
+
+    async function simulateHacking() {
+      const terminal = document.getElementById('terminal');
+
+      for (const message of messages) {
+        terminal.innerHTML += message + '<br>';
+        await sleep(getRandomDelay());
+      }
+
+      terminal.innerHTML += 'Hacking complete!';
+    }
+
+    function sleep(ms) {
+      return new Promise(resolve => setTimeout(resolve, ms));
+    }
+
+    function getRandomDelay() {
+      return Math.floor(Math.random() * 7000) + 1000; // Random delay between 1 to 7 seconds
+    }
+
+    simulateHacking();
+  </script>
+</body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <style>
+    body {
+  background-color: #0f0;
+}
+
+#terminal {
+  background-color: #000;
+  color: #0f0;
+  width: 600px;
+  height: 300px;
+  margin: 50px auto;
+  padding: 20px;
+  font-family: monospace;
+  font-size: 16px;
+  line-height: 1.5;
+  overflow-y: scroll;
+}
+
+#output {
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+  </style>
+</head>
+<body>
+  <div id="terminal">
+    <div id="output"></div>
+  </div>
+
+
+  <script>
+    function sleep(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+async function simulateHacking() {
+  const messages = [
+    "Initializing Hacking...",
+    "Reading Your Files...",
+    "Password Files Detected...",
+    "Sending All Passwords And Personal Files To Server...",
+    "Cleaning Up...",
+    "Hacked... !"
+  ];
+
+  const output = document.getElementById("output");
+
+  for (let i = 0; i < messages.length; i++) {
+    output.innerHTML += messages[i] + "<br>";
+    await sleep(Math.floor(Math.random() * 7000) + 1000);
+  }
+}
+
+simulateHacking();
+  </script>
+
+  <script src="script.js"></script>
+</body>
+</html>

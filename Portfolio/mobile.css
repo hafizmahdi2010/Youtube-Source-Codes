@@ -1,0 +1,39 @@
+@media (max-width:600px){
+  header{
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+  header .logo{
+    font-size: 25px;
+  }
+  header nav .bx-menu{
+    display: block;
+  }
+  header nav ul{
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: royalblue;
+    transform: translateX(-100vw);
+  }
+  
+  /* hero */
+  .hero-section{
+    flex-direction: column-reverse;
+    height: auto;
+  }
+  .hero-section .left{
+    width: 100%;
+  }
+  .hero-section .right{
+    width: 100%;
+  }
+  .hero-section .left h1 {
+    font-size: 24px;
+}
+}
