@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="styles/style.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link
+    href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css"
+    rel="stylesheet"
+/>
+<link rel="stylesheet" href="https://unpkg.com/mouse-follower@1/dist/mouse-follower.min.css">
+
+</head>
+<body>
+  <div class="absolute inset-0 -z-10 h-full w-full items-center px-5 py-24 [background:radial-gradient(125%_125%_at_50%_10%,#000_40%,#63e_100%)]">
+    <div class="navbar">
+      <div class="logo">
+        <h3 class="text-2xl">CodingPlatfrom</h3>
+      </div>
+
+      <div class="links flex items-center gap-3 text-lg">
+        <ul class="flex items-center gap-3 text-lg capitalize">
+          <li><a href="">home</a></li>
+          <li><a href="">about</a></li>
+          <li><a href="">services</a></li>
+          <li><a href="">products</a></li>
+          <li><a href="">contact</a></li>
+        </ul>
+      </div>
+
+
+      <div class="icons flex items-center gap-2 text-lg">
+        <i class="ri-search-line"></i>
+        <i class="ri-code-s-slash-line"></i>
+        <i class="ri-user-line"></i>
+      </div>
+
+
+    </div>
+
+    <div class="hero">
+       <h1>Make And <span data-cursor-img="https://media.designrush.com/articles/269356/conversions/Best-Animated-Website-Designs-details.jpg">Deploy</span> <span data-cursor-img="https://i.pinimg.com/736x/87/42/87/874287d682d087c62f3d6a4a3828ad93.jpg">Future</span> <span data-cursor-img="https://i.ytimg.com/vi/qJOCBe2GO2Q/maxresdefault.jpg">Generation</span> <span data-cursor-img="https://cdn.dribbble.com/userupload/9167367/file/original-9eb93e39fdd8a00b54406270e412d1c3.png?crop=27x0-979x714&resize=400x300&vertical=center">Projects</span> With <br> <span class="sp-text"> <span data-cursor-img="https://cdn.dribbble.com/userupload/10925092/file/original-33e3882945ef2866e0686f511c750b0f.png?crop=0x0-4090x3067&resize=400x300&vertical=center">CodingPlatfrom</span></span></h1>
+       <p class="w-[70%] my-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae culpa amet reiciendis odio mollitia, nam ab. Ullam vitae enim nulla alias voluptates natus nesciunt fugit corporis, ea a, consectetur, nostrum doloremque obcaecati.</p>
+    
+       <div class="herobtns flex items-center gap-3">
+        <button class="btn">Get Started</button>
+        <button class="btn">Vue Docs</button>
+       </div>
+      </div>
+
+
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
+  <script src="https://unpkg.com/mouse-follower@1/dist/mouse-follower.min.js"></script>
+
+  <script>
+    const cursor = new MouseFollower({
+    el: null,
+    container: document.body,
+    className: 'mf-cursor',
+    innerClassName: 'mf-cursor-inner',
+    textClassName: 'mf-cursor-text',
+    mediaClassName: 'mf-cursor-media',
+    mediaBoxClassName: 'mf-cursor-media-box',
+    iconSvgClassName: 'mf-svgsprite',
+    iconSvgNamePrefix: '-',
+    iconSvgSrc: '',
+    dataAttr: 'cursor',
+    hiddenState: '-hidden',
+    textState: '-text',
+    iconState: '-icon',
+    activeState: '-active',
+    mediaState: '-media',
+    stateDetection: {
+        '-pointer': 'a,button',
+        '-hidden': 'iframe'
+    },
+    visible: true,
+    visibleOnState: false,
+    speed: 0.55,
+    ease: 'expo.out',
+    overwrite: true,
+    skewing: 0,
+    skewingText: 2,
+    skewingIcon: 2,
+    skewingMedia: 2,
+    skewingDelta: 0.001,
+    skewingDeltaMax: 0.15,
+    stickDelta: 0.15,
+    showTimeout: 20,
+    hideOnLeave: true,
+    hideTimeout: 300,
+    hideMediaTimeout: 300
+});
+  </script>
+</body>
+</html>
