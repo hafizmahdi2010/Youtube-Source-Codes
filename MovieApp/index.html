@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FilmFusion</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link
+  href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css"
+  rel="stylesheet"
+/>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+ 
+  <div class="navbar">
+    <div class="logo">
+      <h3 class="text-3xl cursor-pointer">FilmFusion</h3>
+    </div>
+
+    <div class="links flex items-center gap-2">
+       <ul class="flex items-center gap-3">
+        <li><a href="" class="uppercase text-[17px]">home</a></li>
+        <li><a href="" class="uppercase text-[17px]">movies</a></li>
+        <li><a href="" class="uppercase text-[17px]">popular</a></li>
+        <li><a href="" class="uppercase text-[17px]">trend</a></li>
+       </ul>
+    </div>
+
+  </div>
+
+  <div class="flex">
+
+    <div class="sidebar">
+      <h3 class="sideLink active">Home</h3>
+      <h3 class="sideLink">Movies</h3>
+      <h3 class="sideLink">Popular</h3>
+      <h3 class="sideLink">Explore</h3>
+      <h3 class="sideLink">Your Movies</h3>
+      <h3 class="sideLink">Chat</h3>
+      <h3 class="sideLink">Online</h3>
+      <h3 class="sideLink">Trend</h3>
+    </div>
+
+    
+    <div class="moviesContainer">
+
+      <div class="flex items-center gap-3 justify-content-between">
+        <h3 class="text-2xl">POPULAR</h3>
+        
+        <div class="inputDiv">
+          <input type="text" placeholder="Search Movies Here...">
+          <i class="ri-search-line text-xl cursor-pointer"></i>
+        </div>
+
+      </div>
+
+
+      <div class="movies">
+        <div class="movieCard" data-bs-toggle="modal" data-bs-target="#exampleModal">
+          <img src="https://images.unsplash.com/photo-1494905998402-395d579af36f?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
+          <h3 class="line-clamp-1 mt-3 text-xl">Car Of Future</h3>
+          <p class="line-clamp-4">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sapiente explicabo quibusdam aliquid fugit nostrum consequuntur, repellat a! Aut et repudiandae qui asperiores officia in id similique ducimus totam reprehenderit, laboriosam distinctio doloremque!</p>
+
+        </div>
+
+        <div class="movieCard" data-bs-toggle="modal" data-bs-target="#exampleModal">
+          <img src="https://images.unsplash.com/photo-1494905998402-395d579af36f?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
+          <h3 class="line-clamp-1 mt-3 text-xl">Car Of Future</h3>
+          <p class="line-clamp-4">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sapiente explicabo quibusdam aliquid fugit nostrum consequuntur, repellat a! Aut et repudiandae qui asperiores officia in id similique ducimus totam reprehenderit, laboriosam distinctio doloremque!</p>
+
+        </div>
+
+        <div class="movieCard" data-bs-toggle="modal" data-bs-target="#exampleModal">
+          <img src="https://images.unsplash.com/photo-1494905998402-395d579af36f?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
+          <h3 class="line-clamp-1 mt-3 text-xl">Car Of Future</h3>
+          <p class="line-clamp-4">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sapiente explicabo quibusdam aliquid fugit nostrum consequuntur, repellat a! Aut et repudiandae qui asperiores officia in id similique ducimus totam reprehenderit, laboriosam distinctio doloremque!</p>
+
+        </div>
+
+        <div class="movieCard" data-bs-toggle="modal" data-bs-target="#exampleModal">
+          <img src="https://images.unsplash.com/photo-1494905998402-395d579af36f?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
+          <h3 class="line-clamp-1 mt-3 text-xl">Car Of Future</h3>
+          <p class="line-clamp-4">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sapiente explicabo quibusdam aliquid fugit nostrum consequuntur, repellat a! Aut et repudiandae qui asperiores officia in id similique ducimus totam reprehenderit, laboriosam distinctio doloremque!</p>
+
+        </div>
+
+        <div class="movieCard" data-bs-toggle="modal" data-bs-target="#exampleModal">
+          <img src="https://images.unsplash.com/photo-1494905998402-395d579af36f?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
+          <h3 class="line-clamp-1 mt-3 text-xl">Car Of Future</h3>
+          <p class="line-clamp-4">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sapiente explicabo quibusdam aliquid fugit nostrum consequuntur, repellat a! Aut et repudiandae qui asperiores officia in id similique ducimus totam reprehenderit, laboriosam distinctio doloremque!</p>
+
+        </div>
+
+
+      </div>
+
+    </div>
+    
+  </div>
+
+
+
+  <!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Car Of Future</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+      
+         <video src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4" muted controls autoplay></video>
+         <h3 class="text-xl mt-3">Car Of Future</h3>
+         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero adipisci consequatur assumenda, blanditiis ex dolorum maiores ea officia nostrum omnis dolores aspernatur quasi eveniet deleniti aperiam ab totam nulla sunt quis laudantium!</p>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+
+  </body>
+</html>
