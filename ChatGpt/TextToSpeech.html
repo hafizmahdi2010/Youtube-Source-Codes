@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            background: linear-gradient(to bottom, #3494E6, #EC6EAD);
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+        }
+
+        #container {
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+            display: inline-block;
+        }
+
+        #text-input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            font-size: 16px;
+        }
+
+        #voice-select {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            font-size: 16px;
+        }
+
+        #speak-button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        #speak-button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h1>Text to Speech Converter</h1>
+        <input type="text" id="text-input" placeholder="Enter text...">
+        <select id="voice-select"></select>
+        <button id="speak-button">Speak</button>
+    </div>
+
+    <script>
+        window.speechSynthesis.onvoiceschanged = populateVoices;
+
+        function populateVoices() {
+            var voices = window.speechSynthesis.getVoices();
+            var voiceSelect = document.getElementById('voice-select');
+            voiceSelect.innerHTML = '';
+            voices.forEach(function (voice) {
+                var option = document.createElement('option');
+                option.textContent = voice.name + ' (' + voice.lang + ')';
+                option.setAttribute('data-voice', voice.name);
+                option.setAttribute('data-lang', voice.lang);
+                voiceSelect.appendChild(option);
+            });
+        }
+
+        function speak() {
+            var textInput = document.getElementById('text-input').value;
+            var voiceSelect = document.getElementById('voice-select');
+            var selectedVoice = voiceSelect.selectedOptions[0].getAttribute('data-voice');
+
+            var utterance = new SpeechSynthesisUtterance(textInput);
+            var voices = window.speechSynthesis.getVoices();
+            for (var i = 0; i < voices.length; i++) {
+                if (voices[i].name === selectedVoice) {
+                    utterance.voice = voices[i];
+                    break;
+                }
+            }
+
+            window.speechSynthesis.speak(utterance);
+        }
+
+        document.getElementById('speak-button').addEventListener('click', speak);
+    </script>
+</body>
+</html>

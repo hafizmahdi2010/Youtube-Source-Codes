@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4 {
+      font-weight: 500;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1>Javascript challenges</h1>
+
+  <div class="container">
+
+  </div>
+
+  <script>
+
+
+    // window.addEventListener("load",()=>{
+    //   
+    //   console.log("cart : ",cartItems)
+    //   console.log(typeof cartItems)
+    // })
+
+    let cartItems = [];
+
+    let products = [
+      {
+        id: 1,
+        title: "product 1",
+        price: 34,
+      },
+      {
+        id: 2,
+        title: "product 2",
+        price: 34,
+      }, {
+        id: 3,
+        title: "product 3",
+        price: 34,
+      }, {
+        id: 4,
+        title: "product 4",
+        price: 34,
+      }, {
+        id: 5,
+        title: "product 5",
+        price: 34,
+      }
+    ];
+
+    let addToCart = (productId) => {
+      let filterData = products.filter((i) => i.id === productId);
+      let product = filterData[0];
+
+      if (filterData.length > 0) {
+
+        console.log("Items : ", cartItems, product, filterData);
+        cartItems.push(product);
+        
+
+        saveData()
+
+        return product
+      }
+      else {
+        return "No Product Found !"
+      }
+
+    };
+
+
+    let removeProduct = (productId) => {
+      let filterData = products.filter((i) => i.id === productId);
+      let product = filterData[0];
+
+      if (filterData.length > 0) {
+
+        let removedItem = cartItems.slice(productId);
+
+
+        console.log("Removed : ", cartItems)
+      }
+
+      else {
+        return "No Product found !"
+      }
+    }
+
+
+    let saveData = () => {
+      if (cartItems.length > 0) {
+        let data = localStorage.setItem("CartData", JSON.stringify(cartItems));
+      }
+      else {
+        return "Cart Is Empty !"
+      }
+    };
+
+    let gatData = () => {
+      let data = localStorage.getItem("CartData");
+
+      let items = JSON.parse(data);
+
+      cartItems.push(items)
+
+      data.slice(2,3,4,5,6)
+      console.log("slice : ",cartItems)
+
+      console.log("Get : ",typeof cartItems,cartItems)
+    };
+
+    gatData();
+    console.log(typeof cartItems)
+
+
+    let populateData = () => {
+
+      let html;
+
+      if(cartItems.length > 0){
+        console.log("if : ",cartItems)
+        cartItems.map((e,i)=>{
+          html += `
+          <div>
+          <p>${e.id}</p>
+          <h2>${e.title}</h2>
+          <p>${e.price}</p>
+          <p>${i}</p>
+          </div>
+          `;
+        });
+
+        document.querySelector('.container').innerHTML = html;
+      }
+      else{
+
+      }
+    };
+
+    populateData()
+
+
+
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jokes Generator - Code With Mahdi</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/sv443-joke-api@0.0.8/web/index.js"></script>
+</head>
+<body>
+  
+  <div class="container w-screen min-h-screen flex px-[100px] gap-[20px] items-center justify-center bg-[#f7f7f7]">
+    
+    <div class="jokesForm w-[35vw] h-[auto] bg-[#fff] shadow-lg p-[10px] px-[20px] flex flex-col">
+      <h3 class="text-[25px] text-[#000] font-[700]">Jokes Generator</h3>
+
+      <input class="p-[7px] outline-0 mt-2" type="text" style="border: 1px solid #ececec;" placeholder="Joke Type - Programing/Misc/Dark/Pun/Spooky/" id="type" name="type" required>
+      
+      <input class="p-[7px] border-1 outline-0 mt-2" style="border: 1px solid #ececec;" type="text" placeholder="Joke Content" id="con" name="con" required>
+
+      <select id="lang" class="p-[7px] border-1 outline-0 mt-2" style="border: 1px solid #ececec;" name="languages" id="languages">
+        <option value="en">English</option>
+        <option value="fr">French</option>
+        <option value="es">Spanish</option>
+        <option value="de">German</option>
+      </select>
+
+      <!-- <div class="jokeCon my-2">
+        <p></p>
+      </div> -->
+
+      <button id="getJoke" class="p-[7px] bg-blue-400 text-[#fff] mt-2" name="submit">Get Joke</button>
+      <button id="randomJoke" class="p-[7px] bg-blue-400 text-[#fff] mt-2 mb-3" name="submit">Get Random Joke</button>
+
+    </div>
+
+    <div class="jokesCon min-h-[41.5vh] w-full h-[auto] bg-[#fff] shadow-lg p-[20px] max-h-[90vh] overflow-y-auto overflow-x-hidden">
+      
+      <!-- <div class="joke mb-2 relative w-full h-[15vh] bg-[#f7f7f7] p-[10px]">
+        <div class="flex items-center justify-between">
+          <p class="text-[gray] text-[14px]">category : <b class="text-black">Misc</b> | Type <b class="text-black">towpart</b> | Language : <b class="text-black">en</b> </p>
+          <p class="text-[gray] text-[14px]">ID : <b class="text-black">234</b></p>
+        </div>
+         <p>What's the difference between a school bus and a cactus? <br> A cactus keeps the little pricks on the outside.</p>
+      </div> -->
+
+      <div class="noData">
+        <h3>Click On Get Jokes Buttons To Get The Jokes</h3>
+      </div>
+
+      
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
