@@ -1,0 +1,288 @@
+prompt 1: 
+Create a modern, premium UI for an AI-powered social media assistant called **SocialFlow AI**.
+
+SocialFlow AI is an AI-powered chatbot (AI Agent) that allows users to manage their social media accounts using natural language. Users simply chat with the AI, and it can generate posts, publish content, schedule posts, manage comments, reply to DMs, and perform other social media actions using **Zenrio's API**.
+
+The application follows this workflow:
+
+1. The user sends a message.
+2. The AI Agent analyzes the request.
+3. If an action is required, the AI Agent generates the appropriate action.
+4. The action is executed using Zenrio's API.
+5. The execution result is passed to a second AI.
+6. The second AI generates a natural, user-friendly response explaining the result.
+7. If no action is detected, the second AI simply responds normally without calling any tools.
+
+We use two AI models:
+
+* **AI Agent** – Responsible for understanding the user's request and generating tool actions.
+* **Response AI** – Responsible for generating the final conversational response after the action has been completed, or responding normally when no action is required.
+
+For AI models, we will use **OpenRouter's free models**.
+
+For social media management, we will use **Zenrio's API**.
+
+Before building the UI, first study Zenrio's documentation carefully so the interface can support all of its available capabilities, including but not limited to:
+
+* Create Posts
+* Schedule Posts
+* Publish Posts
+* Manage Comments
+* Reply to DMs
+* Manage Connected Accounts
+* Any other supported Zenrio features
+
+This is **not** a full-stack application.
+
+There is:
+
+* No backend
+* No database
+* No authentication server
+
+All user data, settings, conversations, API keys, and application state should be stored locally using **Local Storage**.
+
+For now, focus **only on building the UI**.
+
+Create the following pages:
+
+* **Chat Page** – Displays all conversations.
+* **Chat Window Page** – The main AI chat interface where users interact with the AI assistant.
+* **Accounts Page** – Displays all social media accounts connected through Zenrio. These accounts will be fetched from Zenrio's API (e.g., Instagram, LinkedIn, X, Facebook, etc.).
+* **Settings Page** – Users must configure everything required before using the application, including:
+
+  * OpenRouter API Key
+  * OpenRouter Model Selection
+  * Custom Model Input
+  * Zenrio API Key
+* **Landing Page**
+* **Login Page**
+* **Sign Up Page**
+* **About Page**
+
+UI Requirements:
+
+* Clean, modern, and professional SaaS interface.
+* Default dark theme inspired by **shadcn/ui**.
+* Primarily use black, white, and gray with subtle accent colors only where necessary.
+* Premium spacing and typography.
+* Beautiful hover effects, transitions, and micro-interactions.
+* Smooth animations using Framer Motion where appropriate.
+* Responsive across desktop, tablet, and mobile.
+* Maintain a consistent design system throughout the application.
+
+Do not build a generic admin dashboard. The application should feel like a premium AI product similar in quality to ChatGPT, Linear, and Vercel, with the **AI chat experience as the primary focus**.
+
+======================================================================
+Prompt 2: now add all the functionalities properly
+====================================================================
+Prompt 3: this error occur while chating with ai
+
+OpenRouter 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"openai/gpt-oss-120b:free is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate limits: https://openrouter.ai/settings/integrations","provider_name":"OpenInference","is_byok":false}},"user_id":"user_399cEYP1GAYv32wv1Lvu2YwzcEj"}
+
+use free models of open router
+=====================================================================
+Prompt 4: ai give respone well but response not sow in screen
+
+{
+    "id": "gen-1782532959-9Ze3h3S33oLy1mhu8tu4",
+    "object": "chat.completion",
+    "created": 1782532959,
+    "model": "nvidia/nemotron-3-ultra-550b-a55b-20260604:free",
+    "provider": "Nvidia",
+    "system_fingerprint": null,
+    "service_tier": null,
+    "choices": [
+        {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+                "role": "assistant",
+                "content": "Hi there! How can I help you with your social media today?",
+                "refusal": null,
+                "reasoning": "The user keeps saying \"hi\" repeatedly. This seems like they might be testing the system or just greeting. I should respond naturally since they're just chatting, not asking me to perform an action.",
+                "reasoning_details": [
+                    {
+                        "type": "reasoning.text",
+                        "text": "The user keeps saying \"hi\" repeatedly. This seems like they might be testing the system or just greeting. I should respond naturally since they're just chatting, not asking me to perform an action.",
+                        "format": "unknown",
+                        "index": 0
+                    }
+                ]
+            }
+        }
+    ],
+    "usage": {
+        "prompt_tokens": 370,
+        "completion_tokens": 56,
+        "total_tokens": 426,
+        "cost": 0,
+        "is_byok": false,
+        "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+        },
+        "cost_details": {
+            "upstream_inference_cost": 0,
+            "upstream_inference_prompt_cost": 0,
+            "upstream_inference_completions_cost": 0
+        },
+        "completion_tokens_details": {
+            "reasoning_tokens": 50,
+            "image_tokens": 0,
+            "audio_tokens": 0
+        }
+    }
+}
+
+========================================================
+Prompt 5: this error occur while creating post
+
+The post couldn't be created because the system needs to know which social media account to publish it to.
+
+What's missing: An account ID for the platform (e.g., your connected Twitter/X, LinkedIn, or Instagram account).
+
+To fix this: Make sure you've connected at least one social account, then specify which one should be used for this post.
+
+Create Post
+· Failed
+Zernio 400: platforms.0.accountId is required
+========================================================
+Prompt 6: Thepost couldn't be created because the account ID format was invalid.
+
+What this means:
+
+The system couldn't recognize the account identifier you provided
+The account ID might be missing, malformed, or in the wrong format
+Next steps:
+
+Double-check the account ID you're using
+Make sure it matches the expected format for your platform
+Try again with a valid account ID
+If you need help finding the correct account ID format, let me know what platform you're posting to and I can guide you!
+
+Create Post
+· Failed
+Zernio 400: Invalid accountId format
+
+solve this 
+also if user want to shedule post than only we need to shedule otherwise publich it that time
+============================================================
+Prompt 7:
+these error occuring again and agian
+fix this
+create a post on my linkedi n saying hello to everyone
+
+The post couldn't be created because the system needs to know which social media account to publish it to.
+
+What's missing: An account ID for the platform (e.g., your connected Twitter/X, LinkedIn, or Instagram account).
+
+To fix this: Make sure you've connected at least one social account, then specify which one should be used for this post.
+
+Create Post
+· Failed
+Zernio 400: platforms.0.accountId is required
+
+create a post on my linkedi n saying hello to everyone
+
+✅ Post created successfully!
+
+Your post has been scheduled for publishing:
+
+Content: "Hello everyone!"
+
+Platform: LinkedIn → Code With Mahdi account
+
+Scheduled for: June 27, 2026 at 04:08 UTC
+
+Current status: Draft (pending publication)
+
+Note: No media, hashtags, tags, or mentions were included in this post. The post will publish automatically at the scheduled time.
+
+Create Post
+· Done
+Post created successfully
+
+no publish it now
+
+Thepost couldn't be created because the account ID format was invalid.
+
+What this means:
+
+The system couldn't recognize the account identifier you provided
+The account ID might be missing, malformed, or in the wrong format
+Next steps:
+
+Double-check the account ID you're using
+Make sure it matches the expected format for your platform
+Try again with a valid account ID
+If you need help finding the correct account ID format, let me know what platform you're posting to and I can guide you!
+
+Create Post
+· Failed
+Zernio 400: Invalid accountId format
+
+try again
+
+Youhave 2 connected social accounts under your "Default" profile:
+
+Instagram – @codewithmahdi
+
+49 followers • 21 posts
+Business account with full permissions (content publishing, insights, comments, messages)
+Token expires: Aug 14, 2026
+LinkedIn – Code With Mahdi (Organization page)
+
+1 follower • Organization type
+Extensive permissions including org posting, analytics, ads, and conversions
+Token expires: Aug 15, 2026
+Both accounts are active, recently synced, and have no sync errors.
+
+List Accounts
+· Done
+Found 2 connected account(s)
+
+publish post on linked in syaing hello
+
+Itried to create your post, but there was an issue with the account ID format.
+
+What happened:
+
+The system rejected the request because the account ID wasn't in the expected format
+This is a technical validation error on Zernio's side
+Next steps:
+
+Please double-check that you're using the correct account ID
+Make sure the ID matches the format required by Zernio (typically a specific alphanumeric pattern)
+If you're unsure of the correct format, you may need to check your Zernio account settings or documentation
+Would you like to try again with a different account ID?
+
+Create Post
+· Failed
+Zernio 400: Invalid accountId format
+
+if anything need from my side then ask me
+=======================================================
+Prompt 8: use markdown previewer to prevew responses use this one "npm i @uiw/react-markdown-preview "
+=========================================================
+Prompt 9: The post couldn't be deleted because the post ID you provided wasn't in the correct format.
+
+What went wrong:
+
+The system expects a specific ID format (likely a UUID or numeric ID)
+The ID you supplied didn't match that format
+Next steps:
+
+Double-check the post ID you're trying to delete
+Make sure you're copying the full ID correctly
+Try again with the proper ID format
+Delete Post
+· Failed
+Zernio 400: Invalid post ID format
+
+fix this error also
+====================================================
